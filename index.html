@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>김선희 : 포트폴리오 : 신입 웹퍼블리셔</title>
+
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/intro.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- 폰트어썸 -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <!-- 스크립트 -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/intro.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modal2.js"></script>
+    <script>
+    </script>
+  </head>
+  <div>
+    <!-- 접근성 지키기 -->
+    <div id="skip">
+      <a href="#main">본문 바로가기</a>
+    </div>
+
+    <!-- 마우스 커서 따라다니기 -->
+    <div id="cursor_follow">
+      <!-- <img src="images/common/circle-regular.svg" alt="" /> -->
+      <svg id="svg1" class="svg" width="28" height="28">
+      <circle cx="14" cy="14" r="12" fill="#ff4500"/>
+      </svg>
+    </div>
+
+    <!-- pc용 intro -->
+    <div class="intro black_bg" id="pcIntro">
+      <p class="pc_gradient_bg"></p>
+      <div class="wrap">
+        <div class="move">
+          <div class="light"></div>
+          <div id="loadingBox">
+            <p><span id="loadNum">0</span>%</p>
+            <div class="icon">
+              <div class="num"></div>
+            </div>
+            <!-- <img src="images/common/electric_bulb_white.png" alt="" /> -->
+          </div>
+        </div>
+
+        <h1>PORTFOLIO</h1>
+        <p class="h1_shadow" aria-hidden="true">PORTFOLIO</p>
+        <div class="txt_box">
+          <p>WEB <br />PUBLISHER</p>
+          <strong>KIM SEON HUI</strong>
+        </div>
+      </div>
+      <a href="#main" class="icon_box">
+        <div class="icon_move">
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down"></i>
+          <!-- <i class="fas fa-chevron-right"></i> -->
+          <!-- <i class="fas fa-angle-double-down"></i> -->
+        </div>
+      </a>
+    </div>
+
+    <!-- mobile용 intro -->
+    <div class="intro" id="mIntro">
+      <div class="move">
+        <div class="light"></div>
+        <div id="loadingBox">
+          <p><span id="loadNum">0</span>%</p>
+          <img src="images/common/electric_bulb_white.png" alt="" />
+        </div>
+      </div>
+      <h1>PORTFOLIO</h1>
+      <p class="h1_shadow" aria-hidden="true">PORTFOLIO</p>
+      <div class="txt_box">
+        <p>WEB <br />PUBLISHER</p>
+        <strong>KIM SEON HUI</strong>
+      </div>
+    </div>
+
+    <!-- main content -->
+    <main id="main">
+      <!-- 패널1 캐릭터 CHARACTER -->
+      <h2 class="tit">
+        <button
+          type="button"
+          id="aH1"
+          class="a_header first"
+          aria-controls="aP1"
+          aria-expanded="false"
+        >
+          CHARACTER
+        </button>
+      </h2>
+      <div aria-labelledby="aH1" id="aP1" class="a_panel">
+        <div class="container">
+          <h3>
+            <span>도전 </span><button type="button" class="click1" data-href="#aP1ImgBox">click</button>
+            하며, <span>성장 </span><button type="button" class="click2" data-href="#aP1TxtBox">click</button>하는 것을 좋아하는<br />
+            <small>사람 <b>김선희</b> 입니다.</small>
+          </h3>
+          <!-- aP1ImgBox 구 이름 class="img_box_left" -->
+          <div id="aP1ImgBox">
+            <div class="cnt0">
+              <p class="circle"></p>
+            </div>
+            <div class="cnt1">
+              <button type="button" class="circle md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#no1">click</button>
+            </div>
+
+            <div class="cnt2">
+              <button type="button" class="circle md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#no2">click</button>
+            </div>
+
+            <div class="cnt3">
+              <button type="button" class="circle md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#no3">click</button>
+            </div>
+
+            <div class="cnt4">
+              <button type="button" class="circle md_open_btn" aria-haspopup="dialog" title="대화상자" data-href="#no4">click</button>
+            </div>
+          </div>
+
+          <div id="aP1TxtBox">
+            <p>
+              안녕하세요. 만나서 반갑습니다. <br />
+              저는 처음부터 잘 하지는 못할 수 있으나,
+              <br />꾸준히 성장하는 것에 흥미와 자부심을 느낍니다.<br />
+            <br />
+              현재 저는 "나 코딩 완전 잘해" 라고 할 수 없습니다. <br />
+              하지만, 잘 하는 사람은 태어날 때 부터 <br />
+              " !DOCTYPE html " 외치면서 태어나는 것도 아니고! <br />
+              div가 무엇인지도 몰랐던 제가 <br />
+              지금은 페이지를 만들 줄 알게 됐고, <br />
+              부족하지만 포트폴리오도 만들었습니다. <br />
+            <br />
+              개구리도 올챙이 시절이 있었고, <br />
+              국민mc 유재석도 무명이 10년 이었습니다. <br />
+              저는 앞으로 더 대단하고 멋진 코딩을 할 수 있는 <br />
+              가능성 있는 사람입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 패널2 스킬 SKILL -->
+      <h2 class="tit">
+        <button
+          type="button"
+          id="aH2"
+          class="a_header"
+          aria-controls="aP2"
+          aria-expanded="false"
+        >
+          SKILL
+        </button>
+      </h2>
+      <div aria-labelledby="aH2" id="aP2" class="a_panel">
+        <div class="container">
+          <ul class="img_box">
+            <!-- p:조도, span:전구(공통 백그라운드로) -->
+            <li>
+              <p class="html"></p>
+              <span></span>
+            </li>
+            <li>
+              <p class="css"></p>
+              <span></span>
+            </li>
+            <li>
+              <p class="js"></p>
+              <span></span>
+            </li>
+            <li>
+              <p class="jquery"></p>
+              <span></span>
+            </li>
+            <li>
+              <p class="sass"></p>
+              <span></span>
+            </li>
+            <li>
+              <p class="adobe"></p>
+              <span></span>
+            </li>
+          </ul>
+
+          <ul class="toggle_box">
+            <li class="toggle_list">
+              <div class="cnt">
+                <img
+                  class="logo"
+                  src="images/main/panel2_icon_html.png"
+                  alt=""
+                />
+                <div class="toggle">
+                  <input type="checkbox" id="tgHtml">
+                  <label data-num="90" for="tgHtml" class="tg tg_html">html</label>
+                </div>
+              </div>
+            </li>
+            <li class="toggle_list">
+              <div class="cnt">
+                <img
+                  class="logo"
+                  src="images/main/panel2_icon_css.png"
+                  alt=""
+                />
+                <div class="toggle">
+                  <input type="checkbox" id="tgCss">
+                  <label data-num="70" for="tgCss" class="tg tg_css">css</label>
+                </div>
+              </div>
+            </li>
+            <li class="toggle_list">
+              <div class="cnt">
+                <img class="logo" src="images/main/panel2_icon_js.png" alt="" />
+                <div class="toggle">
+                  <input type="checkbox" id="tgJs">
+                  <label data-num="60" for="tgJs" class="tg tg_js">script</label>
+                </div>
+              </div>
+            </li>
+            <li class="toggle_list">
+              <div class="cnt">
+                <img
+                  class="logo"
+                  src="images/main/panel2_icon_jquery.png"
+                  alt=""
+                />
+                <div class="toggle">
+                  <input type="checkbox" id="tgJq">
+                  <label data-num="70" for="tgJq" class="tg tg_jq">jQuery</label>
+                </div>
+              </div>
+            </li>
+            <li class="toggle_list">
+              <div class="cnt">
+                <img
+                  class="logo"
+                  src="images/main/panel2_icon_sass.png"
+                  alt=""
+                />
+                <div class="toggle">
+                  <input type="checkbox" id="tgSass">
+                  <label data-num="65" for="tgSass" class="tg tg_sass">sass</label>
+                </div>
+              </div>
+            </li>
+            <li class="toggle_list">
+              <div class="cnt">
+                <img
+                  class="logo"
+                  src="images/main/panel2_icon_PsAi.png"
+                  alt=""
+                />
+                <div class="toggle">
+                  <input type="checkbox" id="tgAdobe">
+                  <label data-num="80" for="tgAdobe" class="tg tg_adobe">ps&ai</label>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <!-- 일괄소등 토글 -->
+          <div class="toggle_all"></div>
+        </div>
+      </div>
+
+      <!-- 패널3 코딩작업물 CODING -->
+      <h2 class="tit">
+        <button
+          type="button"
+          id="aH3"
+          class="a_header"
+          aria-controls="aP3"
+          aria-expanded="false"
+        >
+          CODING
+        </button>
+      </h2>
+      <div aria-labelledby="aH3" id="aP3" class="a_panel">
+        <div class="container">
+          <div id="circle" class="circle white">
+            <div id="txt1" class="txt_box">
+              <span>A 01</span>
+              <p class="main_tit">웹 접근성 보고서</p>
+              <p class="sub_tit">web Accessibility report</p>
+              <button type="button" class="more_btn">view more</button>
+              <p class="more_cnt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                placeat libero sit aspernatur. Est repudiandae eius explicabo,
+                eaque fugiat ea ipsum, quos provident quisquam minus, libero
+                obcaecati vel iusto odio!
+              </p>
+            </div>
+            <div id="txt2" class="txt_box">
+              <span>A 02</span>
+              <p class="main_tit">웹 접근성 보고서</p>
+              <p class="sub_tit">web Accessibility report</p>
+              <button type="button" class="more_btn">view more</button>
+              <p class="more_cnt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                placeat libero sit aspernatur. Est repudiandae eius explicabo,
+                eaque fugiat ea ipsum, quos provident quisquam minus, libero
+                obcaecati vel iusto odio!
+              </p>
+            </div>
+            <div id="txt3" class="txt_box">
+              <span>A 03</span>
+              <p class="main_tit">웹 접근성 보고서</p>
+              <p class="sub_tit">web Accessibility report</p>
+              <button type="button" class="more_btn">view more</button>
+              <p class="more_cnt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                placeat libero sit aspernatur. Est repudiandae eius explicabo,
+                eaque fugiat ea ipsum, quos provident quisquam minus, libero
+                obcaecati vel iusto odio!
+              </p>
+            </div>
+            <div id="txt4" class="txt_box">
+              <span>A 04</span>
+              <p class="main_tit">웹 접근성 보고서</p>
+              <p class="sub_tit">web Accessibility report</p>
+              <button type="button" class="more_btn">view more</button>
+              <p class="more_cnt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                placeat libero sit aspernatur. Est repudiandae eius explicabo,
+                eaque fugiat ea ipsum, quos provident quisquam minus, libero
+                obcaecati vel iusto odio!
+              </p>
+            </div>
+            <div id="txt5" class="txt_box">
+              <span>A 05</span>
+              <p class="main_tit">웹 접근성 보고서</p>
+              <p class="sub_tit">web Accessibility report</p>
+              <button type="button" class="more_btn">view more</button>
+              <p class="more_cnt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                placeat libero sit aspernatur. Est repudiandae eius explicabo,
+                eaque fugiat ea ipsum, quos provident quisquam minus, libero
+                obcaecati vel iusto odio!
+              </p>
+            </div>
+            <div id="txt6" class="txt_box">
+              <span>A 06</span>
+              <p class="main_tit">웹 접근성 보고서</p>
+              <p class="sub_tit">web Accessibility report</p>
+              <button type="button" class="more_btn">view more</button>
+              <p class="more_cnt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                placeat libero sit aspernatur. Est repudiandae eius explicabo,
+                eaque fugiat ea ipsum, quos provident quisquam minus, libero
+                obcaecati vel iusto odio!
+              </p>
+            </div>
+            <div id="txt7" class="txt_box">
+              <span>A 07</span>
+              <p class="main_tit">웹 접근성 보고서</p>
+              <p class="sub_tit">web Accessibility report</p>
+              <button type="button" class="more_btn">view more</button>
+              <p class="more_cnt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                placeat libero sit aspernatur. Est repudiandae eius explicabo,
+                eaque fugiat ea ipsum, quos provident quisquam minus, libero
+                obcaecati vel iusto odio!
+              </p>
+            </div>
+          </div>
+
+          <div class="slide_view">
+            <div class="slide_wrap">
+              <div class="slide" data-color="blue" data-tgtxt="#txt7"><a href="">007 리디자인</a></div>
+              <div class="slide" data-color="white" data-tgtxt="#txt1"><a href="">001 접근성</a></div>
+              <div class="slide" data-color="black" data-tgtxt="#txt2"><a href="">002 클론코딩 고정형1</a></div>
+              <div class="slide" data-color="black" data-tgtxt="#txt3"><a href="">003 클론코딩 고정형2</a></div>
+              <div class="slide" data-color="black" data-tgtxt="#txt4"><a href="">004 클론코딩 고정형3</a></div>
+              <div class="slide" data-color="orange" data-tgtxt="#txt5"><a href="">005 반응형 라온시큐어</a></div>
+              <div class="slide" data-color="blue" data-tgtxt="#txt6"><a href="">006 리디자인</a></div>
+            </div>
+          </div>
+
+          <div class="arrow_box">
+                <button type="button" class="up_btn"><i class="fas fa-angle-up"></i></button>
+                <button type="button" class="down_btn"><i class="fas fa-angle-down"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 패널4 스크립트 SCRIPT & JQUERY -->
+      <h2 class="tit">
+        <button
+          type="button"
+          id="aH4"
+          class="a_header"
+          aria-controls="aP4"
+          aria-expanded="false"
+        >
+          SCRIPT & JQUERY
+        </button>
+      </h2>
+      <div aria-labelledby="aH4" id="aP4" class="a_panel">
+        <div class="container">
+          <ul class="cnt_list">
+            <li><a href="" role="button"></a></li>
+            <li><a href="" role="button"></a></li>
+            <li><a href="" role="button"></a></li>
+            <li><a href="" role="button"></a></li>
+            <li><a href="" role="button"></a></li>
+            <li><a href="" role="button"></a></li>
+            <li><a href="" role="button"></a></li>
+          </ul>
+
+          <div class="arrow_box">
+            <button type="button" class="right"><i class="fas fa-angle-right"></i></button>
+            <button type="button" class="left"><i class="fas fa-angle-left"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 마지막 패널5 컨텍트 CONTACT -->
+      <h2 class="tit last_tit">
+        <button
+          type="button"
+          id="aH5"
+          class="a_header last"
+          aria-controls="aP5"
+          aria-expanded="false"
+        >
+          CONTACT
+        </button>
+      </h2>
+      <div aria-labelledby="aH5" id="aP5" class="a_panel">
+        <div class="container">
+          <img class="link" src="images/main/link-solid_black.svg" alt="" />
+          <img
+            class="link shadow"
+            src="images/main/link-solid_black.svg"
+            alt=""
+          />
+          <div class="cnt">
+            <div class="light">
+              <img src="images/common/electric_bulb_white.png" alt="" />
+            </div>
+            <div class="txt_box">
+              <strong>KIM SEON HUI</strong>
+              <p>
+                27a@kakao.com<br />
+                010. 4326. 3230
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 패널1 모달 -->
+      <!-- <div id="dim"></div> -->
+      <!-- <div class="md_wrap container"> -->
+          <div class="cnt0 circle txt" id="no1" rloe="dialog" aria-modal="true" aria-labelledby="no1Name">
+            <div class="txt_inner">
+              <h4 id="no1Name">김디브</h4>
+              <strong>(부캐 No.1)</strong>
+              <p>
+                본캐의 영혼의 동반자. 지금은 코딩주니어지만 프론트엔드가 될
+                거라는 큰그림을 그리고 있다. <br> 배울수록 더 공부할 게 많아서
+                매우 즐거워 한다.
+              </p>
+            </div>
+            <button type="button" class="md_close_btn">
+              <img src="images/common/close_btn.png" alt="" />
+            </button>
+          </div>
+          <div class="cnt0 circle txt" id="no2" role="dialog" aria-modal="true" aria-labelledby="no2Name">
+            <div class="txt_inner">
+              <h4 id="no2Name">김가구</h4>
+              <strong>(부캐 No.2)</strong>
+              <p>
+                따라 라라라~ 러브하우스를 보고 건축,인테리어 분야에 반해서
+                가구 설계를 하는 디자이너가 되었다 예쁜 인테리어, 가구
+                보는게 즐겁다 캐릭터중 가장 사회생활을 해본 캐릭터
+              </p>
+            </div>
+            <button type="button" class="md_close_btn">
+              <img src="images/common/close_btn.png" alt="" />
+            </button>
+          </div>  
+          <div class="cnt0 circle txt" id="no3" role="dialog" aria-modal="true" aria-labelledby="no3Name">
+            <div class="txt_inner">
+              <h4 id="no3Name">김탁구</h4>
+              <strong>(부캐 No.3)</strong>
+              <p>
+                제과,제빵에 흥미를 가지고 있다. 만들어서 선물하는 것을
+                좋아한다. 취미를 넘어 취업까지! 취업을 넘어 다시 취미로
+                돌아왔다. <br>깨달음을 얻은 캐릭터
+              </p>
+            </div>
+            <button type="button" class="md_close_btn">
+              <img src="images/common/close_btn.png" alt="" />
+            </button>
+          </div>
+          <div class="cnt0 circle txt" id="no4" role="dialog" aria-modal="true" aria-labelledby="no4Name">
+            <div class="txt_inner">
+              <h4 id="no4Name">김영웅</h4>
+              <strong>(부캐 No.4)</strong>
+              <p>
+                아이언맨3를 처음 보고 2, 1을 역주행한 특이 케이스. 그 후로
+                마블과 히어로 영화를 좋아하게 된다. 히어로 능력을 갖고 싶어
+                한다.
+              </p>
+            </div>
+            <button type="button" class="md_close_btn">
+              <img src="images/common/close_btn.png" alt="" />
+            </button>
+          </div>     
+      <!-- </div> -->
+
+    </main>
+    
+  </body>
+</html>

@@ -1,0 +1,9 @@
+@function vw1920($px) {
+  $vw1920: $px / 19.2;
+  @return #{$vw1920}vw;
+}
+
+@function vw1080($px) {
+  $vw1080: $px / 10.8;
+  @return #{$vw1080}vw;
+}

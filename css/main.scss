@@ -1,0 +1,763 @@
+@charset "utf-8";
+@import '_var', '_function';
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,regular,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:regular,700);
+
+#main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: $yellow;
+  .tit,
+  .a_panel {
+    width: 0;
+    height: 100vh;
+    float: left;
+    position: relative;
+  }
+
+  .tit {
+    width: vw1920(60);
+    border-right: 2px solid #000;
+    &.last_tit {
+      border-right: none;
+    }
+    &.on button {
+      background: #333;
+      color: $yellow;
+    }
+    button {
+      background: $yellow;
+      width: 100vh;
+      height: vw1920(60);
+      // border: 1px solid red;
+      transform: rotate(-90deg);
+      transform-origin: 50vh 50vh;
+      text-align: right;
+      padding-right: vw1920(20);
+      font-size: vw1920(28);
+      line-height: 3.4;
+      font-family: 'Noto Sans KR';
+      color: #000;
+    }
+  }
+}
+
+// 여기부터 패널
+.container {
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76vw;
+  height: 86vh;
+  display: flex;
+}
+.a_panel {
+  display: none;
+  background: #333;
+}
+// 패널1 캐릭터
+#aP1 {
+  position: relative;
+  h3 {
+    // border: 1px solid #000;
+    position: absolute;
+    top: 0;
+    right: vw1920(50);
+    font-size: vw1920(40);
+    color: $yellow;
+    font-family: 'Noto Sans KR';
+    opacity: 0;
+    z-index: 100;
+    // animation: name duration timing-function delay iteration-count direction fill-mode;
+    &.h3_ani {
+      animation: h3Ani 1s forwards;
+    }
+
+    span {
+      font-size: vw1920(50);
+      opacity: 0;
+      display: inline;
+      &.on {
+        opacity: 1;
+      }
+    }
+    small {
+      font-size: vw1920(26);
+      padding-left: vw1920(500);
+      b {
+        font-size: vw1920(50);
+        color: $fontW;
+      }
+    }
+    button {
+      position: absolute;
+      top: vw1920(22);
+      font-size: vw1920(30);
+      font-weight: bold;
+      border-bottom: vw1920(3) solid $yellow;
+      padding: 0 vw1920(10) vw1920(5);
+      &.on {
+        opacity: 0;
+      }
+      &.click1 {
+        left: 0;
+      }
+      &.click2 {
+        left: vw1920(210);
+      }
+    }
+  }
+  // 아래->위, opacity:0->1 애니메이션. h3Ani로 공통적용
+  @keyframes h3Ani {
+    0% {
+      opacity: 0;
+      top: vw1920(50);
+    }
+    100% {
+      opacity: 1;
+      top: 0;
+    }
+  }
+
+  #aP1ImgBox {
+    width: 55%;
+    height: 100%;
+    // border: 1px solid #0ff;
+    position: relative;
+  }
+  #aP1ImgBox,
+  #aP1TxtBox {
+    opacity: 0;
+    &.h3_ani {
+      animation: h3Ani 1s forwards;
+    }
+  }
+  #aP1TxtBox {
+    color: $fontW;
+    width: 45%;
+    // border: 1px solid #f00;
+    p {
+      font-size: vw1920(20);
+      padding: vw1920(200) 0 0 vw1920(50);
+      line-height: 1.5;
+      // border: 1px solid #000;
+    }
+  }
+}
+
+// 공통: 원형, 버튼
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: relative;
+}
+.md_close_btn {
+  visibility: hidden;
+  position: absolute;
+  top: vw1920(30);
+  right: vw1920(30);
+  width: vw1920(30);
+  height: vw1920(30);
+}
+// 각각 컨텐츠
+.cnt0 {
+  width: vw1920(530);
+  height: vw1920(530);
+  position: absolute;
+  top: vw1920(270);
+  right: 0;
+  .circle {
+    background: url('../images/main/panel1_photo1-0.jpg') no-repeat right center;
+    background-size: cover;
+  }
+  .bgChange {
+    background: #000;
+  }
+}
+
+.txt {
+  background: #000;
+  color: $fontW;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .txt_inner {
+    // border: 1px solid red;
+    border-radius: 100%;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    h4 {
+      padding-top: vw1920(30);
+      font-size: vw1920(48);
+      color: $yellow;
+    }
+    strong {
+      font-size: vw1920(30);
+      color: $yellow;
+      font-weight: normal;
+    }
+    p {
+      padding-top: vw1920(50);
+      font-size: vw1920(24);
+      line-height: 1.6;
+    }
+  }
+}
+
+.cnt1 {
+  width: vw1920(320);
+  height: vw1920(320);
+  position: absolute;
+  top: vw1920(-5);
+  left: vw1920(170);
+  .circle {
+    background: url('../images/main/panel1_photo2-1.jpg') no-repeat center
+      center;
+    background-size: cover;
+    font-size: vw1920(40);
+  }
+}
+.cnt2 {
+  width: vw1920(205);
+  height: vw1920(205);
+  position: absolute;
+  top: vw1920(195);
+  left: 0;
+  .circle {
+    background: url('../images/main/panel1_photo4-3.jpg') no-repeat right center;
+    background-size: cover;
+    font-size: vw1920(35);
+  }
+}
+.cnt3 {
+  width: vw1920(130);
+  height: vw1920(130);
+  position: absolute;
+  top: vw1920(385);
+  left: vw1920(115);
+  .circle {
+    background: url('../images/main/panel1_photo3-2.jpg') no-repeat right bottom;
+    background-size: cover;
+    font-size: vw1920(30);
+  }
+}
+.cnt4 {
+  width: vw1920(80);
+  height: vw1920(80);
+  position: absolute;
+  top: vw1920(342);
+  left: vw1920(225);
+  .circle {
+    background: url('../images/main/panel1_photo5-1.jpg') no-repeat right top;
+    background-size: cover;
+    font-size: vw1920(25);
+  }
+}
+.bd_ani {
+  width: 104%;
+  height: 104%;
+  position: absolute;
+  top: -2%;
+  left: -2%;
+  border-radius: 100%;
+  background: linear-gradient(#333 50%, $point 50%);
+  animation: bdAni 4s linear infinite;
+}
+@keyframes bdAni {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+// 패널1 모달
+#dim {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 998;
+}
+#no1,
+#no2,
+#no3,
+#no4 {
+  z-index: 998;
+  position: absolute;
+  top: vw1920(345);
+  left: vw1920(395);
+  visibility: hidden;
+  button {
+    visibility: inherit;
+  }
+}
+
+// 패널2 스킬
+#aP2 {
+  position: relative;
+  font-family: 'Noto Sans KR';
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  ul {
+    // border: 1px solid yellow;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    margin-top: vw1920(50);
+    li {
+      // border: 1px solid #000;
+      width: calc(100% / 6);
+    }
+  }
+}
+#aP2 .img_box {
+  li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .light {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // border: 1px solid aqua;
+      background: url('../images/common/light.png') no-repeat center center;
+      background-size: cover;
+      z-index: 1;
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    span {
+      display: block;
+      width: vw1920(130);
+      height: vw1920(130);
+      background: url('../images/common/electric_bulb_white.png') no-repeat
+        center center;
+      background-size: contain;
+      z-index: 2;
+      // border: 1px solid #000;
+    }
+    .html {
+      width: vw1920(360);
+      height: vw1920(360);
+    }
+    .css,
+    .jquery {
+      width: vw1920(310);
+      height: vw1920(310);
+      opacity: 0.8;
+    }
+    .js {
+      width: vw1920(240);
+      height: vw1920(240);
+      opacity: 0.7;
+    }
+    .sass {
+      width: vw1920(260);
+      height: vw1920(260);
+      opacity: 0.75;
+    }
+    .adobe {
+      width: vw1920(330);
+      height: vw1920(330);
+      opacity: 0.9;
+    }
+  }
+}
+#aP2 .toggle_box {
+  .cnt {
+    width: 90%;
+    height: 50%;
+    // border: 1px solid red;
+    margin: 0 auto;
+    position: relative;
+    .logo {
+      // border: 1px solid aqua;
+      width: vw1920(90);
+      height: vw1920(90);
+    }
+    .toggle {
+      position: absolute;
+      top: vw1920(70);
+      right: 0;
+      // border: 1px solid orange;
+      width: vw1920(170);
+      height: vw1920(40);
+      input {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+      }
+      label {
+        width: 100%;
+        height: 100%;
+        border-radius: vw1920(30);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #111, #222);
+        color: $fontW;
+        text-indent: vw1920(90);
+        line-height: vw1920(38);
+        // border: 1px solid #000;
+        font-size: vw1920(20);
+        font-weight: normal;
+        cursor: pointer;
+      }
+      label::after {
+        content: '';
+        display: block;
+        width: 40%;
+        height: vw1920(36);
+        background: linear-gradient($yellow, #fde422);
+        position: absolute;
+        top: vw1920(2);
+        left: vw1920(2);
+        border-radius: vw1920(30);
+        transition: all 0.5s;
+      }
+      label:active::after {
+        width: 70%;
+      }
+      input:checked + label::after {
+        right: vw1920(2);
+        left: auto;
+        background: #333;
+      }
+      input:checked + label {
+        text-indent: vw1920(10);
+      }
+      input:checked + label.tg_html {
+        background: linear-gradient(90deg, #e54d26, #ff0800);
+      }
+      input:checked + label.tg_css {
+        background: linear-gradient(90deg, #0b74b8, #0044ff);
+      }
+      input:checked + label.tg_js {
+        background: linear-gradient(90deg, #dab92c, #977b00);
+        color: #333;
+      }
+      input:checked + label.tg_jq {
+        background: linear-gradient(90deg, #fff, #999);
+        color: #333;
+      }
+      input:checked + label.tg_sass {
+        background: linear-gradient(90deg, #cf649a, #ff207d);
+      }
+      input:checked + label.tg_adobe {
+        background: linear-gradient(90deg, #3b0101, #000000);
+      }
+    }
+  }
+}
+
+// 패널3 코딩작업물
+#aP3 {
+  position: relative;
+  .container {
+    height: 100vh;
+    overflow: hidden;
+  }
+  #circle {
+    position: relative;
+    width: vw1920(610);
+    height: vw1920(610);
+    border-radius: 100%;
+    margin-top: vw1920(90);
+    color: #fff;
+    &.white {
+      background: $fontW;
+      color: #000;
+      .more_btn,
+      .arrow_box > button {
+        color: #000;
+      }
+      .arrow_box > button::before {
+        background: #000;
+      }
+    }
+    &.black {
+      background: #000000;
+    }
+    &.orange {
+      background: #ff8500;
+    }
+    &.blue {
+      background: #004e65;
+    }
+  }
+  .txt_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    border: 1px solid aqua;
+    padding: vw1920(180) 0 0 vw1920(50);
+    font-family: 'Noto Sans KR';
+    span {
+      display: block;
+      margin-bottom: vw1920(30);
+      font-size: vw1920(24);
+    }
+    .main_tit {
+      font-size: vw1920(48);
+    }
+    .sub_tit {
+      margin: vw1920(-5) vw1920(0) vw1920(47);
+      font-size: vw1920(30);
+    }
+    .more_btn {
+      font-size: vw1920(24);
+      color: #fff;
+    }
+    .more_cnt {
+      display: none;
+      margin-top: vw1920(42);
+      font-size: vw1920(26);
+    }
+  }
+  .txt_box.view{
+    visibility: visible;
+  }
+  .slide_view {
+    .slide_wrap {
+      width: vw1920(900);
+      height: 100%;
+      position: absolute;
+      margin-top: vw1920(-220);
+      top: 0;
+      right: 0;
+      transition: all 0.5s;
+      .slide {
+        width: 100%;
+        height: vw1920(480);
+        background: aqua;
+        margin-bottom: vw1920(70);
+        font-size: 100px;
+      }
+    }
+  }
+  .arrow_box {
+    // border: 1px solid coral;
+    position: absolute;
+    top: vw1920(400);
+    left: vw1920(450);
+    width: vw1920(100);
+    height: vw1920(150);
+    button {
+      position: absolute;
+      width: vw1920(25);
+      height: vw1920(80);
+      // border: 1px solid #fff;
+      color: #fff;
+      font-size: vw1920(25);
+      transition: all 0.5s;
+      text-align: center;
+      &::before {
+        content: '';
+        display: inline-block;
+        height: vw1920(36);
+        width: vw1920(3.5);
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.5s;
+      }
+    }
+
+    .up_btn {
+      top: 0;
+      left: vw1920(30);
+      &::before {
+        bottom: vw1920(5);
+      }
+    }
+    .down_btn {
+      top: vw1920(70);
+      left: 0;
+      &::before {
+        top: vw1920(5);
+      }
+    }
+  }
+}
+
+// 패널4 스크립트,제이쿼리
+#aP4 {
+  position: relative;
+  .container {
+    width: 82vw;
+    overflow: hidden;
+  }
+  .cnt_list {
+    width: 170%;
+    height: 100%;
+    border: 1px solid aqua;
+    display: flex;
+    position: absolute;
+    li {
+      width: vw1920(300);
+      height: vw1920(600);
+      margin-right: vw1920(60);
+      background: #000;
+      &:nth-child(odd) {
+        margin-top: vw1920(160);
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .arrow_box {
+    border: 1px solid coral;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: vw1920(130);
+    height: vw1920(100);
+    button {
+      position: absolute;
+      left: vw1920(25);
+      width: vw1920(80);
+      height: vw1920(25);
+      border: 1px solid #000;
+      font-size: vw1920(25);
+      line-height: vw1920(20);
+      transition: all 0.5s;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: vw1920(36);
+        height: vw1920(3.5);
+        background: #000;
+        position: absolute;
+        top: 46%;
+        transition: all 0.5s;
+      }
+    }
+
+    .left {
+      top: vw1920(10);
+      text-align: left;
+      // background: url('../images/common/chevron-left-solid.svg') no-repeat left center;
+      &::before {
+        left: vw1920(5);
+      }
+    }
+    .right {
+      top: vw1920(40);
+      text-align: right;
+      // background: url('../images/common/chevron-right-solid.svg') no-repeat right center;
+      &::before {
+        right: vw1920(5);
+      }
+    }
+    // 버튼 호버,포커스시 움직이는 제어
+    button:hover::before,
+    button:focus::before {
+      width: vw1920(60);
+      background: $yellow;
+    }
+    .left:hover,
+    .left:focus {
+      left: vw1920(0);
+      color: $yellow;
+    }
+    .right:hover,
+    .right:focus {
+      left: vw1920(50);
+      color: $yellow;
+    }
+  }
+}
+
+// 패널5 컨텍트
+#aP5 {
+  background: rgba(51, 51, 51, 0.7);
+  .container {
+    width: 90%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    // border: 1px solid aqua;
+    .link {
+      width: vw1920(1350);
+      position: absolute;
+      top: vw1920(-100);
+      right: vw1920(-100);
+      z-index: 1;
+    }
+    .shadow {
+      width: vw1920(1250);
+      top: vw1920(-140);
+      right: vw1920(-190);
+      opacity: 0.4;
+    }
+    .cnt {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      // border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: vw1920(80);
+      z-index: 2;
+      .light {
+        width: vw1920(500);
+        height: vw1920(500);
+        // border: 1px solid #f0f;
+        position: relative;
+        background: radial-gradient($yellow 1%, #918423 20%, transparent 60%);
+        img {
+          width: vw1920(120);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .txt_box {
+        padding-top: vw1920(6);
+        text-align: center;
+        color: #fff;
+        // border: 1px solid #000;
+        strong {
+          display: block;
+          font-size: vw1920(62);
+        }
+        p {
+          padding-top: vw1920(68);
+          font-size: vw1920(42);
+        }
+      }
+    }
+  }
+}
